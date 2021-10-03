@@ -1,0 +1,61 @@
+@import 'variables';
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  font-size: $font-size-s;
+  line-height: $line-height-s;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-family-display;
+}
+
+ul,
+li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.content {
+  max-width: $container-width;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.default-enter-active,
+.default-leave-active {
+  transition-property: opacity, transform;
+  transition-duration: var($t-duration);
+  transition-timing-function: ease-in-out;
+}
+
+.default-enter-active {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  background-color: $color-white;
+  transform: translate3d(0, 100vh, 0);
+}
+
+.default-leave-to {
+  opacity: 0.2;
+  transform: translate3d(0, -80vh, 0);
+}
+
+.default-enter-to {
+  transform: translate3d(0, 0, 0);
+}
