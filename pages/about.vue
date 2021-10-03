@@ -1,5 +1,5 @@
 <template>
-  <main class="page about flex-container">
+  <main class="about flex-container">
     <div class="grid-wrapper">
       <nuxt-img class="img" src="coding.svg" width="350" />
       <div class="text-wrapper">
@@ -19,12 +19,12 @@
       <div class="text-wrapper">
         <h2 class="heading">From Idea to Website</h2>
         <p class="text">
-          Go from the initial concepts to the final product with a structured
+          Going from the initial concepts to the final product with a structured
           process.
         </p>
         <p class="text">
-          Adapt the digital strategy in wireframes with a clear focus on the end
-          user to ensure you’re building the right website.
+          Adapting the digital strategy in wireframes with a clear focus on the
+          end user to ensure you’re building the right website.
         </p>
       </div>
       <nuxt-img class="img" src="idea.svg" width="350" />
@@ -77,6 +77,7 @@
 <style lang="scss" scoped>
 .about {
   margin: 0 auto;
+  padding: 7rem 0;
 }
 
 .flex-container {
@@ -87,7 +88,7 @@
 }
 
 .grid-wrapper {
-  width: 50vw;
+  width: 80%;
   display: grid;
   grid-template-columns: 1fr 1fr;
   justify-items: center;
@@ -104,7 +105,7 @@
 }
 
 .margin-top-big {
-  margin-top: 12rem;
+  margin-top: 9rem;
 }
 
 .container {

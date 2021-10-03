@@ -5,15 +5,6 @@
         <Nuxt-Link class="logo-link" to="/">FN</Nuxt-Link>
       </div>
 
-      <div class="quick-menu-wrapper">
-        <ul>
-          <li><Nuxt-Link to="/">Home</Nuxt-Link></li>
-          <li><Nuxt-Link to="/about">About Me</Nuxt-Link></li>
-          <li><Nuxt-Link to="/approach">My Approach</Nuxt-Link></li>
-          <li><Nuxt-Link to="/contact">Contact</Nuxt-Link></li>
-        </ul>
-      </div>
-
       <div class="menu-wrapper">
         <a
           id="js-toggle-menu"
@@ -28,19 +19,39 @@
       <div class="overlay-menu">
         <ul>
           <ul>
-            <li><Nuxt-Link to="/" class="overlay-link">Home</Nuxt-Link></li>
             <li>
-              <Nuxt-Link to="/about" class="overlay-link">About Me</Nuxt-Link>
+              <Nuxt-Link to="/" class="overlay-link" data-value="Home"
+                >Home</Nuxt-Link
+              >
             </li>
             <li>
-              <Nuxt-Link to="/approach" class="overlay-link"
+              <Nuxt-Link to="/about" class="overlay-link" data-value="About Me"
+                >About Me</Nuxt-Link
+              >
+            </li>
+            <li>
+              <Nuxt-Link
+                to="/approach"
+                class="overlay-link"
+                data-value="My Approach"
                 >My Approach</Nuxt-Link
               >
             </li>
             <li>
-              <Nuxt-Link to="/contact" class="overlay-link">Contact</Nuxt-Link>
+              <Nuxt-Link to="/contact" class="overlay-link" data-value="Contact"
+                >Contact</Nuxt-Link
+              >
             </li>
           </ul>
+        </ul>
+      </div>
+
+      <div class="quick-menu-wrapper">
+        <ul>
+          <li><Nuxt-Link to="/">Home</Nuxt-Link></li>
+          <li><Nuxt-Link to="/about">About Me</Nuxt-Link></li>
+          <li><Nuxt-Link to="/approach">My Approach</Nuxt-Link></li>
+          <li><Nuxt-Link to="/contact">Contact</Nuxt-Link></li>
         </ul>
       </div>
     </div>
@@ -191,7 +202,7 @@ export default {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: $color-black;
+  background-color: $color-white;
   opacity: 0;
   z-index: -1;
   transform: translateY(-100%);
@@ -202,12 +213,10 @@ export default {
 
   ul {
     position: relative;
+    text-align: center;
     color: $color-red;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
+    top: 50%;
+    transform: translateY(-50%);
   }
 }
 
@@ -245,9 +254,31 @@ export default {
 }
 
 .overlay-link {
-  color: $color-white;
   font-family: $font-family-display;
   font-size: $font-size-xxl;
+  color: $color-black;
+  position: relative;
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(-1rem);
+  transition-property: opacity, transform;
+  transition-duration: 0.4s;
+  transition-timing-function: ease-out;
+
+  &::before {
+    content: attr(data-value);
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-width: 0;
+    padding: inherit;
+    color: $color-black;
+    white-space: nowrap;
+    overflow: hidden;
+    transition-property: max-width;
+    transition-timing-function: linear;
+    transition-duration: 0.2s;
+  }
 }
 
 .show-menu {
@@ -257,21 +288,34 @@ export default {
   transition-duration: 0.6s;
   transition-timing-function: step-start, ease-out;
 
-  .logo-wrapper,
-  .quick-menu-wrapper {
-    display: none;
-  }
-
-  .header-row {
-    justify-content: end;
-  }
-
   .overlay-menu {
     opacity: 1;
     transform: translateY(0);
 
+    .overlay-link {
+      opacity: 1;
+      transform: translateY(0);
+      transition-duration: 0.4s;
+    }
+
     li {
       margin-top: 2rem;
+
+      &:nth-child(1) .overlay-link {
+        transition-delay: 0.2s;
+      }
+
+      &:nth-child(2) .overlay-link {
+        transition-delay: 0.4s;
+      }
+
+      &:nth-child(3) .overlay-link {
+        transition-delay: 0.6s;
+      }
+
+      &:nth-child(4) .overlay-link {
+        transition-delay: 0.8s;
+      }
     }
   }
 
