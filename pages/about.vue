@@ -1,7 +1,7 @@
 <template>
-  <main class="about flex-container">
+  <main class="about flex-container content">
     <div class="grid-wrapper">
-      <nuxt-img class="img" src="coding.svg" width="350" />
+      <nuxt-img class="img" src="coding.svg" width="300" />
       <div class="text-wrapper">
         <h2 class="heading">About Me</h2>
         <p class="text">
@@ -27,12 +27,12 @@
           end user to ensure you’re building the right website.
         </p>
       </div>
-      <nuxt-img class="img" src="idea.svg" width="350" />
+      <nuxt-img class="img" src="idea.svg" width="300" />
     </div>
 
-    <div class="container flex-container">
-      <div class="flex-wrapper align-self-start margin-top-big">
-        <nuxt-img class="" src="lightning.svg" width="250" />
+    <div class="flex-container w-100">
+      <div class="flex-wrapper container align-self-start margin-top-big">
+        <nuxt-img class="" src="lightning.svg" width="200" />
         <div class="text-wrapper">
           <h2 class="heading">Modern Websites should be lightning fast</h2>
           <p class="text">
@@ -45,12 +45,10 @@
         </div>
       </div>
 
-      <div class="flex-wrapper align-self-center margin-top">
-        <nuxt-img class="" src="ux-ui.svg" width="250" />
+      <div class="flex-wrapper container align-self-center margin-top">
+        <nuxt-img class="" src="ux-ui.svg" width="200" />
         <div class="text-wrapper">
-          <h2 class="heading">
-            With a focus on good user experience & user interface
-          </h2>
+          <h2 class="heading">With a focus on good UX & UI</h2>
           <p class="text">
             Users should have no issue navigating your website.
           </p>
@@ -60,8 +58,8 @@
         </div>
       </div>
 
-      <div class="flex-wrapper align-self-end margin-top">
-        <nuxt-img class="" src="devices.svg" width="250" />
+      <div class="flex-wrapper container align-self-end margin-top">
+        <nuxt-img class="" src="devices.svg" width="200" />
         <div class="text-wrapper">
           <h2 class="heading">Responsive for all devices</h2>
           <p class="text">
@@ -75,11 +73,6 @@
 </template>
 
 <style lang="scss" scoped>
-.about {
-  margin: 0 auto;
-  padding: 7rem 0;
-}
-
 .flex-container {
   display: flex;
   flex-direction: column;
@@ -88,12 +81,19 @@
 }
 
 .grid-wrapper {
-  width: 80%;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 300px 300px;
   justify-items: center;
   gap: 3rem;
 }
+
+/* .img {
+  justify-self: end;
+
+  &:last-child {
+    justify-self: start;
+  }
+} */
 
 .heading {
   font-size: $font-size-xl;
@@ -108,13 +108,17 @@
   margin-top: 9rem;
 }
 
-.container {
-  width: 80%;
-}
-
 .flex-wrapper {
   display: flex;
   gap: 1rem;
+}
+
+.container {
+  max-width: 100%;
+}
+
+.w-100 {
+  width: 100%;
 }
 
 .align-self-start {
