@@ -72,6 +72,12 @@
   </main>
 </template>
 
+<script>
+export default {
+  transition: { name: 'intro', mode: 'out-in' },
+}
+</script>
+
 <style lang="scss" scoped>
 .flex-container {
   display: flex;

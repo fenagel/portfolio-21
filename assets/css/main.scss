@@ -3,6 +3,8 @@
 body {
   margin: 0;
   padding: 0;
+  height: 100vh;
+  width: 100vw;
   font-family: 'Roboto', sans-serif;
   font-size: $font-size-s;
   line-height: $line-height-s;
@@ -29,34 +31,49 @@ a {
   text-decoration: none;
 }
 
-.content {
-  max-width: $container-width;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 7rem 0;
-}
-
-.default-enter-active,
-.default-leave-active {
-  transition-property: opacity, transform;
-  transition-duration: var($t-duration);
-  transition-timing-function: ease-in-out;
-}
-
-.default-enter-active {
-  position: fixed;
-  top: 0;
-  left: 0;
+.container {
   width: 100vw;
-  background-color: $color-white;
-  transform: translate3d(0, 100vh, 0);
+  height: 100vh;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
 }
 
-.default-leave-to {
-  opacity: 0.2;
-  transform: translate3d(0, -80vh, 0);
+.section {
+  width: 100vw;
+  height: 100vh;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 
-.default-enter-to {
+.blue {
+  background: linear-gradient(to bottom, $color-blue, #fff);
+  &-top {
+    background: linear-gradient(to top, $color-blue, #fff);
+  }
+}
+
+.fade-in-left {
+  opacity: 0;
+  transform: translate3d(-150px, 0, 0);
+}
+
+.fade-in-up {
+  opacity: 0;
+  transform: translate3d(0, 150px, 0);
+}
+
+.fade-in-right {
+  opacity: 0;
+  transform: translate3d(150px, 0, 0);
+}
+
+.fade-in-down {
+  opacity: 0;
+  transform: translate3d(0, -150px, 0);
+}
+
+.fade-in {
+  opacity: 1;
   transform: translate3d(0, 0, 0);
+  transition: all 1s ease;
 }

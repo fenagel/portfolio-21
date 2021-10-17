@@ -81,12 +81,10 @@ export default {
   animation-timing-function: ease-out;
   animation-fill-mode: forwards;
   animation-delay: 0s;
-  color: $color-red;
+  color: $color-black;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
 
-  @media screen and (min-width: $bp-l) {
-    padding-top: 0.75rem;
-    padding-bottom: 0.75rem;
-  }
   @media screen and (min-width: $bp-xl) {
     padding-top: 2.25rem;
     padding-bottom: 2.25rem;
@@ -119,7 +117,7 @@ export default {
 .logo-link {
   &:hover,
   &:visited {
-    color: $color-red;
+    color: $color-black;
   }
 }
 
@@ -145,7 +143,7 @@ export default {
   position: relative;
   width: 2.5rem;
   height: 1rem;
-  color: $color-red;
+  color: $color-black;
   transition-property: color, transform;
   transition-duration: 0.4s;
   transition-timing-function: ease-out;
@@ -214,7 +212,7 @@ export default {
   ul {
     position: relative;
     text-align: center;
-    color: $color-red;
+    color: $color-black;
     top: 50%;
     transform: translateY(-50%);
   }
@@ -234,8 +232,10 @@ export default {
   }
 
   li {
+    padding-left: 1rem;
+
     a {
-      color: $color-red;
+      color: $color-black;
 
       &:hover {
         opacity: 0.9;
@@ -243,7 +243,7 @@ export default {
 
       &:active,
       &:visited {
-        color: $color-red;
+        color: $color-black;
       }
     }
 

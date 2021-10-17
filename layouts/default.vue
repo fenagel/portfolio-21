@@ -1,6 +1,8 @@
 <template>
   <div>
     <Navbar />
-    <Nuxt />
+    <transition name="page">
+      <Nuxt />
+    </transition>
   </div>
 </template>

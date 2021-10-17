@@ -25,13 +25,13 @@ export default {
     scss: ['assets/css/_variables.scss'],
   },
 
-  pageTransition: {
-    name: 'default',
-    mode: 'in-out',
-  },
+  // pageTransition: {
+  //   name: 'page',
+  //   mode: 'in-out',
+  // },
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [{ src: '~/plugins/typed.js' }],
+  plugins: ['~/plugins/scroll.client.js', '~/plugins/typed.js'],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
